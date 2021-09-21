@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+@font-face {
+    font-family: "NixieOne";
+    src: url(../polices/NixieOne.ttf)
+}
+
+@font-face {
+    font-family: "PoiretOne-Regular";
+    src: url(../polices/PoiretOne-Regular.ttf);
+}
+
+/* html {
+    overflow-y: hidden;
+    verrouiller le scroll horizontal
+} */
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-image: url("../img/SKY2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+
+/* apparition en fondu */
+.fade-in {
+    -webkit-animation-name: fadeInOpacity;
+    animation-name: fadeInOpacity;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+}
+
+@-webkit-keyframes fadeInOpacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* fin d'apparition en fondu */
+/* Barre de navigation */
+
+nav {
+    display: flex;
+    /*aligne les éléments*/
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /*mets un écart entre les onglets et les buttons*/
+    position: sticky;
+    top: 0;
+    background-color: #090906d2;
+    padding: 10px 0px;
+    z-index: 100;
+}
+
+nav .menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 5px 20px;
+    cursor: pointer;
+}
+
+nav .menu #cv {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #e98007;
+}
+
+nav .menu a {
+    margin-right: 10px;
+    /* marges entre les onglets*/
+    padding: 10px;
+    text-decoration: none;
+    /* enlève le surlignage du lien */
+    color: #fff;
+    border-right: #3a6baa solid 3px;
+    border-bottom-left-radius: 10px;
+}
+
+nav .buttons button {
+    padding: 13px 20px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+}
+
+nav .buttons .CV {
+    background-color: #060609;
+    margin-right: 10px;
+    color: #eee;
+}
+
+nav .buttons .contact {
+    background-color: #060609;
+    border-bottom: 2px solid #3a6baa;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: #eee;
+}
+
+.menu .icon {
+    display: none;
+}
+.menu .icon a {
+    color: #eee;
+  }
+nav a:hover{
+        background-color: #3a6baa;
+        color: #eee;
+}
+nav a.active
+
+/* verrouille l'onglet en actif */
+    {
+    background-color:  #be7f09;
+    color: #eee;
+}
+
+/* Fin de barre de navigation */
+
+
+/*Partie header */
+
+header {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    /* display:flex; */
+
+}
+
+header img {
+    position: absolute;
+    /* top: 0px;
+    left: 0px; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /*conserve les proposrtions des images*/
+    pointer-events: none;
+    transition: 2s ease-out;
+}
+
+header img#sky {
+    width: 150%;
+    height: 150%;
+    /* transform: translateX(-600px); */
+    z-index: 0;
+}
+
+header img#earth {
+    margin-bottom: 500px;
+    left: 200px;
+    width: 1000px;
+    height: 837px;
+    z-index: 2;
+}
+
+header img#moon {
+    /* transform:translateY(75px); */
+    z-index: 4;
+}
+
+header img#moon2 {
+    transform: translateY(50px);
+
+    z-index: 3;
+}
+
+header #title {
+    position: absolute;
+    margin-left: 92px;
+    margin-top: 100px;
+    color: #ccc;
+    font-family: "NixieOne", sans-serif;
+    list-style-type: none;
+    border-left: 3px solid #3a6baa;
+    z-index: 1;
+    transition: 1s ease-in-out;
+}
+
+header #title #name {
+    position: relative;
+    font-size: 4em;
+    z-index: 1;
+}
+
+header #title #web {
+    position: relative;
+    font-size: 60px;
+    font-family: 'Comfortaa', cursive;
+    z-index: 1;
+}
+
+header #title #web span {
+    color: #3a6baa;
+}
+
+header #title #web #junior {
+    font-size: 30px;
+    letter-spacing: -2px;
+}
+
+header #title #mission {
+    position: relative;
+    font-size: 20px;
+    width: 560px;
+    background-color: #3a6baa80;
+    font-weight: bolder;
+    padding: 5px;
+    letter-spacing: 5px;
+    z-index: 1;
+}
+
+/* dégardé noir sur la photo lune */
+header:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    transform: translateY(75px);
+    /* background: linear-gradient(to top, #060609, transparent); */
+    /* z-index: 10; */
+}
+
+/* _____________________________________________________________ */
+
+/*Fin de partie header */
+#paragraph {
+    display: grid;
+    /*margin: 0px 40px 0px 40px;*/
+    padding: 50px;
+    background-color: #060609;
+}
+
+#paragraph #presentation {
+    position: relative;
+    font-size: 4em;
+    color: #3a6baa;
+    font-style: italic;
+    border-left: 2px solid #3a6baa;
+    border-bottom-left-radius: 10px;
+}
+
+#paragraph .colonne .intro span {
+    font-size: 4em;
+    color: #3a6baa;
+    
+}
+
+.intro{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+#paragraph .colonne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px, 100px, 0px, 100px;
+}
+
+#paragraph #portrait {
+    float: left;
+    width: 200px;
+    height: auto;
+    margin-left: 100px;
+    border-left: 2px solid #3a6baa;
+}
+
+#citation {
+    text-align: right;
+    margin: 0px 20px;
+    padding: 50px;
+    color: #3a6baa;
+    font-style: oblique;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+/* Début de Footer */
+footer {
+    background-color: #292929;
+    color: #7c7c7c;
+    padding: 10px 100px;
+}
+
+footer h5 {
+    color: #b8b8b8;
+    font-size: 20px;
+}
+
+footer .colonnes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#citation span {
+    font-size: 15px;
+    color: #b8b8b8;
+}
+
+/* Fin de Footer */
+
+
+/* Début du responsive */
+@media screen and (max-width:1250px) {
+    header img#sky {
+        width: 150%;
+        height: 150%;
+        /* transform: translateX(-350px); */
+    }
+}
+
+  @media screen and (max-width:900px) {
+    .menu.responsive {position: absolute;}
+    .menu.responsive li.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .menu a {
+      display: none;
+    }
+    .menu.responsive a {
+      display: block;
+      text-align: left;
+    }
+    header #title {
+        margin-left: 20px;
+        }
+    header img#sky {
+        width: 150%;
+        height: 150%;
+        transform: translateX(-300px);
+    }
+    header img#moon2 {
+        transform: translateY(25px);
+    }
+  }
+  @media screen and (max-width:700px) {
+        
+        /* Menu
+        Style du Menu disponible dans le fichier menu.css (et qui sera modifié et complété pour s'adapter à nos besoins) */
+        /*  On masque les éléments li enfants du ul ayant la class "topnav", à l'exception du 1er enfant (qui est le panier) */
+        .menu a:not(:first-child) {
+          display: none;
+        }
+        /* On fait apparaitre le li ayant la class "icon" qui est enfant d'un ul ayant la class "topnav" et on le positionne à droite */
+        .menu .icon {
+          float: right;
+          display: inline-block;
+          /* Définition de la position de l'icone burger */
+          position: absolute;
+          right: 20px;
+          top: 140px;
+        }
+        /* Définition de la position de l'icone panier */
+        .menu :first-child{
+          position: absolute;
+          left: 20px;
+          top: 140px;
+        }
+        .menu.responsive {
+          position: relative;
+          /* Définition d'un contexte flex permettant de modifier l'emplacement des enfants de la balise ul ayant les class topnav et responsive (la class responsive est ajoutée grâce à la fonction javascript au clic sur l'icone burger). Les éléments de la liste (li) sont des enfants du ul.topnav.responsive, ils seront alignés en colonne. */
+          display: flex;
+          flex-direction: column;
+          /* Définition de la hauteur de la liste à 220px pour que celle-ci soit assez grande pour afficher tous les éléments de la liste */
+          height: 220px;
+        }
+        /* Définition de la position de l'icone burger lorsque la navbar a la class "responsive" (soit au clic sur le burger pour ouvrir le menu) */
+        .menu.responsive .icon {
+          position: absolute;
+          right: 20px;
+          top: 10px;
+        }
+        /* Définition de la position de l'icone panier quand le menu possède la class responsive */
+        .menu.responsive :first-child{
+          position: absolute;
+          left: 20px;
+          top: 10px;
+        }
+        /* On fait apparaitre les éléments li enfants du ul.topnav.responsive */
+        .menu.responsive{
+          display: inline;
+        }
+       
+    header #title #name {
+        font-size: 2em;
+    }
+    
+    header #title #web {
+        font-size: 30px;
+    }
+    
+    header #title #web #junior {
+        font-size: 20px;
+    }
+    
+    header #title #mission {
+        display: none;
+   }
+   
+    header img#earth {
+        right: 20em;
+    }
+} 
+  @media screen and (max-width:400px) {
+    header #title #web #junior{
+        border-top:3px solid #3a6baa;
+  }
+}
